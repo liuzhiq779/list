@@ -1,0 +1,20 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt generate
+dist
+
+#System
+.DS_Store
+
+#Build
+build
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
