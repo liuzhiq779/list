@@ -4,10 +4,87 @@ block title
   title koa Douban 首页
 
 block content
-  .container
-    .row
-      .col-md-8
-        h1 Hi #{you}
-        p this is #{me}
-      .col-md-4
-        p 测试动态 pug  模板引
+  include ./includes/header
+
+  .container-fluid
+    .sidebar
+    .contet
+      .row
+        .col-md-6
+          .card
+            img.card-img-top(src="http://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/738b4710b912c8fc30b90996f0039245d6882127.jpg"  ,
+            data-video="https://www.bilibili.com/medialist/play/ml298485397")
+            .card-body
+              h4.card-title 这是电影标题
+              p.card-desc 这是电影描述
+            .card-footer
+              small.text-muted 我是你强爸爸
+      .row
+        .col-md-6
+          .card
+            img.card-img-top(src="http://img5.imgtn.bdimg.com/it/u=3866509853,3713453134&fm=26&gp=0.jpg",
+            data-video='http://video.iblack7.com/tgGnZRn3W4Ajw6PGca_9Z.mp4')
+            .card-body
+              h4.card-title 这是电影标题
+              p.card-desc 这是电影描述
+            .card-footer
+              small.text-muted 我是你强爸爸
+        .col-md-6
+          .card
+            img.card-img-top(src='http://o9spj1b.bkt.clouddn.com/5570778b-f7fc-4bccf-9df3-e47a6954',
+            data-video='https://v.qq.com/x/page/p0506cfc6cm.html')
+            .card-body
+              h4.card-title 这是电影标题
+              p.card-desc 这是电影描述
+            .card-footer
+              small.text-muted 我是你强爸爸
+
+  #myModal.modal.fade.bd-example-modal-lg(tabindex="1",role="dialog",
+
+  aria-labelledby="myLargeModalLabel",aria-hidden="true")
+    .modal-dialog.modal-lg
+      #videoModal.modal-content
+
+
+  include ./includes/script
+
+  script.
+    var player = null
+
+    $(document).ready(function () {
+      $('#myModal').on('hidden.bs.modal', function (e) {
+         if (player && onpause) player.pause()
+        
+      })
+
+      $('.card-img-top').click(function (e) {
+         var video = $(this).data('video')
+         var image = $(this).attr('src')
+
+        $('#myModal').modal('show')//拿到躺床
+
+        if (!player) {
+          player = new Dplayer({
+            container: document.getElementById('videoModal'),
+            screenshot: true,
+            video: {
+              url: video,
+              pic: image,
+              thumbnails: image
+            }
+          })
+        } else {
+          if(play.vodeo.currentSrc !== video) {
+          player.switchVideo({
+            url: video,
+            pic: image,
+            type: 'auto'
+           })
+         }
+        }
+      })
+
+    })
+
+
+
