@@ -22,7 +22,9 @@
     "koa-views": "^5.2.1",
     "koa2": "^2.0.0-alpha.7",
     "pug": "^2.0.3",
-    "puppeteer": "^1.14.0"
+    "puppeteer": "^1.14.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"

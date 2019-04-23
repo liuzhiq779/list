@@ -58,6 +58,9 @@ const  sleep = time => new Promise(resolve => {
 
   browser.close()
 
-  console.log(result)
+  //console.log(result)上一届吧拿到的数据打印出去
+
+  process.send({result})//把拿到的数据发送出去
+  process.exit(0)//进程退出
 
 })()
