@@ -38,7 +38,7 @@ const  sleep = time => new Promise(resolve => {
     if (items.length >=1) {
       items.each((index, items) =>{
         let it = $(items)
-        let doubanId =it.find('div').data(' id')
+        let doubanId =it.find('div').data('id')
         let title = it.find('.title').text()
         let rate = Number(it.find('.rate').text())
         let poster = it.find('img').attr('src').replace('s_ratio','l_ratio')
@@ -58,7 +58,7 @@ const  sleep = time => new Promise(resolve => {
 
   browser.close()
 
-  //console.log(result)上一届吧拿到的数据打印出去
+  //console.log(result)//上一届吧拿到的数据打印出去
 
   process.send({result})//把拿到的数据发送出去
   process.exit(0)//进程退出

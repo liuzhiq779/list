@@ -13,11 +13,13 @@ async function fetchMovie (item ) {
 
 ;(async () => {
   let  movies = [
-    { title: '雷霆沙赞！',
+    { doubanId: 2244426,
+      title: '雷霆沙赞！',
       rate: 6.6,
       poster:
         'https://img3.doubanio.com/view/photo/l_ratio_poster/public/p2551249211.jpg' },
-    { title: '飞驰人生',
+    { doubanId: 30163509,
+      title: '飞驰人生',
       rate: 7,
       poster:
         'https://img3.doubanio.com/view/photo/l_ratio_poster/public/p2542973862.jpg' },

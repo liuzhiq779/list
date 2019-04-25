@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer')
 
-const base = 'https://movie.douban.com/subject/26739551/'
-const doubanId = '26739551'
-const videoBase = 'https://movie.douban.com/trailer/219491'
+const base = 'https://movie.douban.com/subject/'
+const doubanId = '26584183'
+const videoBase = 'https://movie.douban.com/trailer/244061/'
 
 
 const  sleep = time => new Promise(resolve => {
@@ -74,7 +74,7 @@ const  sleep = time => new Promise(resolve => {
 
   browser.close()
 
-  //console.log(result)上一届吧拿到的数据打印出去
+  console.log(result) //上一届吧拿到的数据打印出去
 
   process.send({data})//把拿到的数据发送出去
   process.exit(0)//进程退出

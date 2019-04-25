@@ -3,7 +3,7 @@ const { resolve} = require('path')//拼接路径
 
 ;(async () => {
   const script = resolve(__dirname, '../crawler/video')//拿到脚本拼接路径
-  const child = cp.fork(script, [])//调用子进程cp.方法在传入参数
+  const child =  cp.fork(script, [])//调用子进程cp.方法在传入参数
   let invoked = false //标识符看看子进程洋浦没有跑起来
 
   //回调函数监听异常
